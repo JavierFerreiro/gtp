@@ -1,0 +1,94 @@
+#!/bin/env bash
+##Inicialization Variables
+qa=()
+qanumbers=()
+NumQuestions=10
+option=""
+DBFile="/home/xavi/bin/gtp_centos_en.db"
+
+##Functions
+Menu(){	#Print the main menu
+clear
+printf "     CentSuite     \n"
+printf "%s\n" "-------------------"
+printf "1-)Random Questions\n"
+printf "2-)For Topic(TODO)\n"
+printf "3-)Exit\n"
+}
+
+ReadQA(){	#Read the DB file with the appropiate questions
+case $1 in
+	1)IFS=$'\n' qa=( $(<$DBFile) ) #All the questions are ok 
+	  ;;
+	2):	#Only questions of a topic
+esac
+
+}
+
+RandomQuestions(){	#Choose the random numbers inside the vector of Questions
+local number=""
+qanumbers=( $(( $RANDOM%${#qa[@]} ))  )
+for (( i=1; i<NumQuestions; i++ )); do
+	while [ -z $number ]; do
+		number=$(( $RANDOM%${#qa[@]} ))
+		for (( j=0; j<${#qanumbers[@]}; j++ )); do
+			if [ $number -eq ${qanumbers[$j]} ];then
+				number=""
+				break;	
+			fi
+		done
+	done
+	qanumbers+=( $number )
+	number=""
+done
+
+}
+
+###Main
+##Checkings
+#TODO:Check numberofquestions<NumberofquestionsinDB
+
+##Presenting Menu
+while true; do
+	numquestion=1
+	Menu
+	read -n1 -p "Choose an option: " option
+	case $option in
+		1)
+		ReadQA $option
+		RandomQuestions
+		echo
+		while [ $numquestion -le $NumQuestions ]; do
+			correct="${qa[${qanumbers[$numquestion]}-1]#*'\0'}"
+			correct="${correct%'\0'*}"
+			question="${qa[${qanumbers[$numquestion]}-1]%%'\0'*}"
+			printf "%d-)%s: " "$numquestion" "${question}"
+			read answer
+			if [ "$answer" = "$correct" ];then
+				echo "Correct"
+			else 
+				echo "Wrong"
+				echo "Correct answer $correct"
+			fi
+			printf "\nYour answer is: %s\n" "$answer"
+			(( numquestion+=1 ))
+		done
+		read -n1
+		;;
+		2)
+		printf "option 2"
+		;;
+		3)
+		printf "\nGood bye\n"
+		exit 0
+		;;
+		*)
+		printf "\nUnrecognize option (Press any key to continue)"
+		read -n1
+		;;
+	esac
+done
+##Round questions
+##Results
+
+

@@ -1,0 +1,38 @@
+Write path and file where reside the locale configuration\0/etc/locale.conf\0System_Administrator_Guide,Locale,Keyboard
+Options for /etc/locale.conf\0LANG,LC_COLLATE,LC_CTYPE,LC_NUMERIC,LC_TIME,LC_MESSAGES\0System_Administrator_Guide,Locale,Keyboard
+Command to manipulate locales\0localectl\0System_Administrator_Guide,Locale,Keyboard
+Command display status locales\0localectl status\0System_Administrator_Guide,Locale,Keyboard
+Command display available locales\0localectl list-locales\0System_Administrator_Guide,Locale,Keyboard
+Command to set default system locale\0localectl set-locale LANG=locale\0System_Administrator_Guide,Locale,Keyboard
+Command to display current keyboard layout\0localectl status\0System_Administrator_Guide,Locale,Keyboard
+Command to display available keymaps\0localectl list-keymaps\0System_Administrator_Guide,Locale,Keyboard
+Command to change keyboard layout\0localectl set-keymap map\0System_Administrator_Guide,Locale,Keyboard 
+Option of localectl to NO apply the change at keymap to the X system keymap or viceverse\0--no-convert\0System_Administrator_Guide,Locale,Keyboard
+Command to change keyboard layout of the X11\0localectl set-x11-keymap map\0System_Administrator_Guide,Locale,Keyboard
+Command to put LANG in spanish of Spain (charset utf8) but messages in C\0localectl set-locale LANG=es_ES.utf8 LC_MESSAGES=C\0System_Administrator_Guide,Locale,Keyboard
+What is a RTC?\0Is a circuit on the system board that has a Real-time clock and works with the computer off too\0System_Administrator_Guide,Date_and_time
+Who mantain the system clock?\0The kernel\0System_Administrator_Guide,Date_and_time
+What "types of time" can use the RTC?\0local time or UTC\0System_Administrator_Guide,Date_and_time
+What 3 commands are used to change de date/time?\0date, timedatectl, hwclock\0System_Administrator_Guide,Date_and_time
+What command to chanfe de date is part of systemd?\0timedatectl\0System_Administrator_Guide,Date_and_time
+How to display the current date and time (systemd style)\0timedatectl\0System_Administrator_Guide,Date_and_time
+Command to change the date (systemd style)\0timedatectl set-time YYYY-MM-DD\0System_Administrator_Guide,Date_and_time
+Command to change the time (systemd style)\0timedatectl set-time HH:MM:SS\0System_Administrator_Guide,Date_and_time
+Command to change the system clock from UTC to local time and viceversa: \0timedatectl set-local-rtc boolean\0System_Administrator_Guide,Date_and_time
+Command to list all available time zones:\0timedatectl list-timezones\0System_Administrator_Guide,Date_and_time
+Command to change the time zone:\0timedatectl set-timezone time_zone\0System_Administrator_Guide,Date_and_time
+Command to active/deactive the ntp sync with the system clock:\0timedatectl set-ntp boolean\0System_Administrator_Guide,Date_and_time
+Command to show current date and local time (old fashion):\0date\0System_Administrator_Guide,Date_and_time
+Command to show current date and utc time (old fashion):\0date --utc\0System_Administrator_Guide,Date_and_time
+Command to coustumize the format of date and time displayed (old fashion):\0date +"format"
+Command to change the date (old fashion):\0date +%F -s YYYY-MM-DD\0System_Administrator_Guide,Date_and_time
+Command to change the time (old fashion):\0date +%T -s HH:MM:SS\0System_Administrator_Guide,Date_and_time
+Command to show the date and time of the rtc:\0hwclock\0System_Administrator_Guide,Date_and_time
+Path and file where is the "Description/configuration" of the hardware clock:\0/etc/adjtime\0System_Administrator_Guide,Date_and_time
+Command to show the date and time of the rtc in utc?\0hwclock --utc\0System_Administrator_Guide,Date_and_time
+Command to show the date and time of the rtc in local time?\0hwclock --localtime\0System_Administrator_Guide,Date_and_time
+Command to set the date and time of hardware clock?\0hwclock --set --date ""dd mmm yyyy HH:MM"\0System_Administrator_Guide,Date_and_time
+Command to set the date and time of hardware clock equal to system?\0hwclock --systohc \0System_Administrator_Guide,Date_and_time
+Command to set the date and time of system clock equal to hardware clock\0hwclock --hctosys \0System_Administrator_Guide,Date_and_time
+System_Administrator_Guide,Date_and_time
+
