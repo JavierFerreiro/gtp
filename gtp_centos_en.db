@@ -34,5 +34,61 @@ Command to show the date and time of the rtc in local time?\0hwclock --localtime
 Command to set the date and time of hardware clock?\0hwclock --set --date ""dd mmm yyyy HH:MM"\0System_Administrator_Guide,Date_and_time
 Command to set the date and time of hardware clock equal to system?\0hwclock --systohc \0System_Administrator_Guide,Date_and_time
 Command to set the date and time of system clock equal to hardware clock\0hwclock --hctosys \0System_Administrator_Guide,Date_and_time
-System_Administrator_Guide,Date_and_time
+How is know the number that identify a user?\0uid\0System_Administrator_Guide,Users_Groups
+How is know the number that identify a group?\0gid\0System_Administrator_Guide,Users_Groups
+How can change the owner of a file?\0root\0System_Administrator_Guide,Users_Groups
+How can change the acces permissions of a file?\0root and owner\0System_Administrator_Guide,Users_Groups
+what is a upg?\0User private group\0System_Administrator_Guide,Users_Groups
+What determinate the permissions of a newly created file?\0umask\0System_Administrator_Guide,Users_Groups
+Where is the umask declare?\0/etc/bashrc\0System_Administrator_Guide,Users_Groups
+What is the function of the umask?\0Negate the permissions\0System_Administrator_Guide,Users_Groups 
+What package provide shadow passwords?\0shadow-utils\0System_Administrator_Guide,Users_Groups 
+In a system with shadow passwords where is the information about passwords?\0/etc/shadow\0System_Administrator_Guide,Users_Groups 
+Shadow password permit storage information about password aging?\0Yes\0System_Administrator_Guide,Users_Groups 
+Where is the policies that is enforced by shadow password?\0/etc/login.defs\0System_Administrator_Guide,Users_Groups 
+Above what number is the uid assigned for non system users?\0500\System_Administrator_Guide,Users_Groups 
+Command to add a user to the system:\0useradd username\0System_Administrator_Guide,Users_Groups 
+How to change or unlock the initial lock when create a user?\0passwd username\0System_Administrator_Guide,Users_Groups 
+Path and name of the file where is the user account information\0/etc/passwd\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/passwd: juan:x:501:501::/home/juan:/bin/bash which field (number) is the username?\01\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/passwd: juan:x:501:501::/home/juan:/bin/bash what indicate the x in the second field\0The password is not in the file /etc/passwd is in the /etc/shadow file\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/passwd: juan:x:501:501::/home/juan:/bin/bash which field (number) is the uid?\03\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/passwd: juan:x:501:501::/home/juan:/bin/bash which field (number) is the gid?\04\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/passwd: juan:x:501:501::/home/juan:/bin/bash which field (number) is the GECO (Curiosity: General Electric Comprehensive Operating System)?\05\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/passwd: juan:x:501:501::/home/juan:/bin/bash which field (number) is the home?\06\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/passwd: juan:x:501:501::/home/juan:/bin/bash which field (number) is the shell?\07\0System_Administrator_Guide,Users_Groups 
+Path and name of the file where is the user password information if shadow passwords is enable\0/etc/passwd\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/shadow: juan:!!:14798:0:99999:7::: which field (number) is the username?\01\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/shadow: juan:!!:14798:0:99999:7::: which field (number) locks the account?\02\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/shadow: juan:!!:14798:0:99999:7::: which field (number) is the date of last password change?\03\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/shadow: juan:!!:14798:0:99999:7::: which field (number) is the minimum password age?\04\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/shadow: juan:!!:14798:0:99999:7::: which field (number) is the maximum password age?\05\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/shadow: juan:!!:14798:0:99999:7::: which field (number) is the password warning period?\06\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/shadow: juan:!!:14798:0:99999:7::: which field (number) is the password inactivity period?\07\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/shadow: juan:!!:14798:0:99999:7::: which field (number) is the account expiration date?\07\0System_Administrator_Guide,Users_Groups 
+Path and name of the file where is the group information\0/etc/group\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/group: juan:x:501 which field (number) is the group name?\01\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/group: juan:x:501 which field (number) is the passwd of the group?\02\0System_Administrator_Guide,Users_Groups 
+In the next entry of the /etc/group: juan:x:501 which field (number) is the gid\03\0System_Administrator_Guide,Users_Groups 
+Path and name of the file where is the group password information if shadow passwords is enable\0/etc/gshadow\0System_Administrator_Guide,Users_Groups 
+From where is copy the minimum infrastructure of a home?\0/etc/skel/\0System_Administrator_Guide,Users_Groups 
+Command to add a group to the system:\0groupadd groupname\0System_Administrator_Guide,Users_Groups 
+What is the most normal use of setgid permission?\0Put in a directory of a project such that all files has the same group and share it between the user's group\0System_Administrator_Guide,Users_Groups 
+Command to modify an user?\0usermod\0System_Administrator_Guide,Users_Groups 
+Command to delete an user?\0userdel\0System_Administrator_Guide,Users_Groups 
+Command to delete a group?\0groupdel\0System_Administrator_Guide,Users_Groups 
+Command to modify a group?\0groupmod\0System_Administrator_Guide,Users_Groups 
+Command to modify /etc/group?\0gpasswd\0System_Administrator_Guide,Users_Groups 
+Command to convert standard passwords in shadow passwords?\0pwconv\0System_Administrator_Guide,Users_Groups 
+Command to convert shadow passwords in standard passwords?\0pwunconv\0System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
+System_Administrator_Guide,Users_Groups 
 
