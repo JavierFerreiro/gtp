@@ -81,14 +81,15 @@ Command to modify a group?\0groupmod\0System_Administrator_Guide,Users_Groups
 Command to modify /etc/group?\0gpasswd\0System_Administrator_Guide,Users_Groups 
 Command to convert standard passwords in shadow passwords?\0pwconv\0System_Administrator_Guide,Users_Groups 
 Command to convert shadow passwords in standard passwords?\0pwunconv\0System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-System_Administrator_Guide,Users_Groups 
-
+Command to change your uid and tranform in another user (for example root)\0su\0System_Administrator_Guide,Privileges
+How you can execute commands like root only introducing your password?\0sudo command\0System_Administrator_Guide,Privileges
+Who can use sudo?\0The users listeds in /etc/sudoers\0System_Administrator_Guide,Privileges
+When launch a command with sudo in what shell is executed: root shell or user that launch the command with sudo?\0user\0System_Administrator_Guide,Privileges
+Where is logged the authentication with sudo?\0/var/log/messages\0System_Administrator_Guide,Privileges
+Where is logged the command used with sudo and the user who called it?\0/var/log/secure\0System_Administrator_Guide,Privileges
+What is the command to edit the file /etc/sudoers?\0visudo\0System_Administrator_Guide,Privileges
+In this line of the file /etc/sudoers: juan ALL=(ALL) ALL . Which field is the user?\01\0System_Administrator_Guide,Privileges
+In this line of the file /etc/sudoers: juan ALL=(ALL) ALL . Which field is the machine where can use this permissions?\02\0System_Administrator_Guide,Privileges
+In this line of the file /etc/sudoers: juan ALL=(ALL) ALL . Which field is the user:group that you can specify with -u and -g to sudo to execute like this user or group ?\03\0System_Administrator_Guide,Privileges
+In this line of the file /etc/sudoers: juan ALL=(ALL) ALL . Which field is the command to execute?\04\0System_Administrator_Guide,Privileges
+How you can specify an alias in the file /etc/sudoers?\0%\0System_Administrator_Guide,Privileges
