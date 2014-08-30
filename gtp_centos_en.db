@@ -37,7 +37,7 @@ Command to set the date and time of system clock equal to hardware clock\0hwcloc
 How is know the number that identify a user?\0uid\0System_Administrator_Guide,Users_Groups
 How is know the number that identify a group?\0gid\0System_Administrator_Guide,Users_Groups
 How can change the owner of a file?\0root\0System_Administrator_Guide,Users_Groups
-How can change the acces permissions of a file?\0root and owner\0System_Administrator_Guide,Users_Groups
+Who can change the acces permissions of a file?\0root and owner\0System_Administrator_Guide,Users_Groups
 what is a upg?\0User private group\0System_Administrator_Guide,Users_Groups
 What determinate the permissions of a newly created file?\0umask\0System_Administrator_Guide,Users_Groups
 Where is the umask declare?\0/etc/bashrc\0System_Administrator_Guide,Users_Groups
@@ -93,3 +93,70 @@ In this line of the file /etc/sudoers: juan ALL=(ALL) ALL . Which field is the m
 In this line of the file /etc/sudoers: juan ALL=(ALL) ALL . Which field is the user:group that you can specify with -u and -g to sudo to execute like this user or group ?\03\0System_Administrator_Guide,Privileges
 In this line of the file /etc/sudoers: juan ALL=(ALL) ALL . Which field is the command to execute?\04\0System_Administrator_Guide,Privileges
 How you can specify an alias in the file /etc/sudoers?\0%\0System_Administrator_Guide,Privileges
+What program is the package manager?\0yum\0System_Administrator_Guide,Package_Management,Yum
+How you can obtain a list of packages that can be updated with yum?\0yum check-update\0System_Administrator_Guide,Package_Management,Yum
+What is the graphical package manager?\0PackageKit\0System_Administrator_Guide,Package_Management,Yum
+How you can update a package(s)?\0yum update package(s)\0System_Administrator_Guide,Package_Management,Yum
+How can only download a package?\0In the information screen after say install or update the X package, choose "d". Other form is install the plugin for yum yum-plugin-downloadonly and use in yum the --downloadonly\0System_Administrator_Guide,Package_Management,Yum
+Difference between yum update and yum upgrade?\0yum upgrade is the same that yum update with the obsolete option active (default). This option it's useful\0System_Administrator_Guide,Package_Management,Yum
+How you can update all the packages?\0yum update\0System_Administrator_Guide,Package_Management,Yum
+How you can search a term in the package [name|description|summary]?\yum search all term\0System_Administrator_Guide,Package_Management,Yum
+How you can search a term in the package [name|summary]?\yum search term\0System_Administrator_Guide,Package_Management,Yum
+How to list all available and installed packages?\0yum list all\0System_Administrator_Guide,Package_Management,Yum
+How to list all available and installed packages that match a glob?\0yum list glob\0System_Administrator_Guide,Package_Management,Yum
+How to list all installed packages?\yum list installed\0System_Administrator_Guide,Package_Management,Yum
+How to list all installed packages that match a glob?\yum list glob\0System_Administrator_Guide,Package_Management,Yum
+How to list all available packages to install that match a glob?\yum list available glob\0System_Administrator_Guide,Package_Management,Yum
+How to list all available packages to install?\yum list available\0System_Administrator_Guide,Package_Management,Yum
+How to list all available repositories (enables) with yum?\yum repolist\0System_Administrator_Guide,Package_Management,Yum
+How to list all available repositories (enables) with yum in extended form?\yum repolist -v\0System_Administrator_Guide,Package_Management,Yum
+How to list all available repositories (enables) with yum in extended form?\yum repolist -v\0System_Administrator_Guide,Package_Management,Yum
+How to list all available repositories (enables and disables) with yum?\yum repolist all\0System_Administrator_Guide,Package_Management,Yum
+How to get information about a package?\0yum info package_name\0System_Administrator_Guide,Package_Management,Yum
+How to get extended information about a package?\0yum info package_name\0System_Administrator_Guide,Package_Management,Yum
+how to install a package?\0yum install package\0System_Administrator_Guide,Package_Management,Yum
+how to install a package of a specific architecture on a multilib system?\0yum install package.arch\0System_Administrator_Guide,Package_Management,Yum
+how to install a package specifying a binary?\0yum install binary(/usr/sbin/named) or combining with a glob yum install */named\0System_Administrator_Guide,Package_Management,Yum
+How to know what package provide a specific file?\0yum provides "*/file_name"\0System_Administrator_Guide,Package_Management,Yum
+How to install a previously-downloaded package from the local directory on your system?\0yum localinstall path\0System_Administrator_Guide,Package_Management,Yum
+How to uninstall a package and any dependency?\yum remove package_name\0System_Administrator_Guide,Package_Management,Yum
+What forms accept yum for express the name of a package?\0package name,glob expression, file list,package provides\0System_Administrator_Guide,Package_Management,Yum
+How to install a group?\0yum group install "group name" or yum group install groupid\0System_Administrator_Guide,Package_Management,Yum
+How to know the number of groups installed and available?\0yum group summary\0System_Administrator_Guide,Package_Management,Yum
+How to list all the groups packages from yum repositories (included the groupid)?\yum group list ids\0System_Administrator_Guide,Package_Management,Yum
+How to obtain information about the packages of a group?\yum group info group_name\0System_Administrator_Guide,Package_Management,Yum
+what does mean the symbols: "-","+","=" in the result of a group info group_name\0- package not installed and it will not be installed as part of the package group, + package not installed but will be installed , = package installed as part of the group, no symbol means package installed but not in the context of the package group (independently)\0System_Administrator_Guide,Package_Management,Yum
+How to install a group whithout use yum group?\0yum install @group\0System_Administrator_Guide,Package_Management,Yum
+How to install a environment group whithout use yum group?\0yum install @^group\0System_Administrator_Guide,Package_Management,Yum
+How to remove a group?\0yum group remove groupid or yum group remove "group name"\0System_Administrator_Guide,Package_Management,Yum
+How to remove a group whithout use yum group?\0yum remove @group\0System_Administrator_Guide,Package_Management,Yum
+How to list the last 20 transactions of yum?\0yum history list\0System_Administrator_Guide,Package_Management,Yum
+How to list all the transactions of yum?\0yum history list all\0System_Administrator_Guide,Package_Management,Yum
+How to list the transactions of yum between two id's?\0yum history list start_id..end_id\0System_Administrator_Guide,Package_Management,Yum
+How to list all the transactions of yum regarding a package(s)?\0yum history list glob_expression\0System_Administrator_Guide,Package_Management,Yum
+How to synchronize the rpmdb whith yumdb?\0yum history sync\0System_Administrator_Guide,Package_Management,Yum
+How to display statistics about the usage of yum?\yum history stats\0System_Administrator_Guide,Package_Management,Yum
+How to display a summary of the actions of yum?\0yum history summary [glob_expression]\0System_Administrator_Guide,Package_Management,Yum
+How to display a summary of the actions made in a package?\0yum history package-list glob_expression\0System_Administrator_Guide,Package_Management,Yum
+How to the details of a transaction?\0yum history info [id][start_id..end_id]\0System_Administrator_Guide,Package_Management,Yum
+How to revert a transaction of yum?\0yum history undo id\0System_Administrator_Guide,Package_Management,Yum
+How to redo a transaction of yum?\0yum history redo id\0System_Administrator_Guide,Package_Management,Yum
+How to create a file with yum transactions to repeat this transactions in another machine?\0yum -q history addon-info id saved_tx > file_name\0System_Administrator_Guide,Package_Management,Yum
+How to repeat a transaction that is write in a file?\0yum load-transaction file_name\0System_Administrator_Guide,Package_Management,Yum
+How to create a new DB for yum?\0yum history new\0System_Administrator_Guide,Package_Management,Yum
+What is the name and where is the file that configure yum?\0/etc/yum.conf\0System_Administrator_Guide,Package_Management,Yum
+What is the mandatory section in the yum.conf?\0[main]\0System_Administrator_Guide,Package_Management,Yum
+What sections are in yum.conf?\0[main],[repository]\0System_Administrator_Guide,Package_Management,Yum
+Where is recomended to put the files describing repositories?\0/etc/yum.repos.d\0How to exclude a package in a installation or update with yum?\0include in the [main] section of /etc/yum.conf the value exclude=glob_expresion_pckg_name\0System_Administrator_Guide,Package_Management,Yum
+How to activate the check of gpg signature of the packages?\0In the [main] section of the /etc/yum.conf include gpgcheck=1\0System_Administrator_Guide,Package_Management,Yum
+How to mark a package that could be installed but never update?\0In the [main] section of the /etc/yum.conf add the package at installonlypkgs=space_separated_list_of_packages\0System_Administrator_Guide,Package_Management,Yum
+What "type" of packages are by default installonlypkgs?\0Kernel packages\0System_Administrator_Guide,Package_Management,Yum
+How to mantain installed 3 packages of differents versions of the kernel?\0In the [main] section of the yum.conf put installonly_limit=3\0System_Administrator_Guide,Package_Management,Yum
+How can install the package of the best architecture possible (if your machine support more than one)?\0In the [main] section of the yum.conf set multilib_policy=best\0System_Administrator_Guide,Package_Management,Yum
+What are the minumum directives you must to set in a [repository] section of yum.con or a file in /etc/yum.repos.d\0name and baseurl\0System_Administrator_Guide,Package_Management,Yum
+How to deactivate a repository?\0In the config file put enable=0\0System_Administrator_Guide,Package_Management,Yum
+What yum variable has the value of the version of the OS?\0$releasever\0System_Administrator_Guide,Package_Management,Yum
+What yum variable contain the architecture of the OS?\0$arch\0System_Administrator_Guide,Package_Management,Yum
+How to define a costume variable for yum?\0Create a file with the same name of the variable in /etc/yum/vars and add the desired value on its first line\0How to define a costume variable for yum?\0Create a file with the same name of the variable in /etc/yum/vars and add the desired value on its first line\0System_Administrator_Guide,Package_Management,Yum
+How to create a repository?\01-yum install createrepo 2-mkdir -p /whatever 3-cp packages /whatever 4-cd /whatever 5-createrepo --database /whatever\0System_Administrator_Guide,Package_Management,Yum
+Where are the configuration files of the yum plugins?\0/etc/yum/pluginconf.d\0System_Administrator_Guide,Package_Management,Yum
