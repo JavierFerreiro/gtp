@@ -160,3 +160,66 @@ What yum variable contain the architecture of the OS?\0$arch\0System_Administrat
 How to define a costume variable for yum?\0Create a file with the same name of the variable in /etc/yum/vars and add the desired value on its first line\0How to define a costume variable for yum?\0Create a file with the same name of the variable in /etc/yum/vars and add the desired value on its first line\0System_Administrator_Guide,Package_Management,Yum
 How to create a repository?\01-yum install createrepo 2-mkdir -p /whatever 3-cp packages /whatever 4-cd /whatever 5-createrepo --database /whatever\0System_Administrator_Guide,Package_Management,Yum
 Where are the configuration files of the yum plugins?\0/etc/yum/pluginconf.d\0System_Administrator_Guide,Package_Management,Yum
+What is systemd\0A system and service manager\0System_administrator_Guide,Infrastructure_Services,Systemd
+Systemd is compatible with SysV init scripts\0Yes\0System_administrator_Guide,Infrastructure_Services,Systemd
+Say four of the most relevant features of systemd?\0Parallel startup of system services at boot time, on-demand activation of daemons, support for system state snapshots and dependency-based service control logic\0System_administrator_Guide,Infrastructure_Services,Systemd
+What is a systemd unit?\0Are a files that encapsulate information about objects that are relevant to the init system, objects like system services, saved system state snapshots, etc.\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A system service"\0Service unit, .service\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A group of systemd units"\0Target unit, .target\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A file system automount point"\0Automount unit, .automount\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A device file recognized by the kernel"\0Device unit, .device\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A file system mount point"\0Mount point, .mount\0\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A file or directory in a file system"\0Path unit, .path\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "An externally created process"\0Scope unit, .scope\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A group of hierarchicallay organized units that manage system processes"\0Slice unit, .slice\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A saved state of the systemd manager"\0Snapshot unit, .snapshot\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "An inter-process communication socket"\0Socket unit, .socket\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A swap device or a swap file"\0Swap unit, .swap\0System_administrator_Guide,Infrastructure_Services,Systemd
+Write the name and file extension of the unit type described like this: "A systemd timer"\0Timer unit, .timer\0System_administrator_Guide,Infrastructure_Services,Systemd
+Where you can find the systemd units distributed with installed RPM packages?\0/usr/lib/systemd/system/\0System_administrator_Guide,Infrastructure_Services,Systemd
+Where you can find the systemd units createds at run time (precedence over the directory with the installed service units (RPM)) ?\0/run/systemd/system/\0System_administrator_Guide,Infrastructure_Services,Systemd
+Where you can find the systemd units createds by the system administrator (precedence over all the directories)?\0/etc/systemd/system/\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: Socket-based activation\0At boot time, systemd creates all listening sockets for the services that support this, passing the control of the socket when the service is ready. Meanwhile the buffer socket receive and enqueue the messages waiting the services processes it. For this systemd uses socket unit files\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: Bus-based activation\0The services that uses D-Bus for inter-process communication can be started on-demmand. For this systemd uses bus-based activation\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: Device-based activation\0Some system service can be started when a particular type of hardware is available. Systemd use device unit for this.\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: Path-based activation\0iSome system service can be started when a particular file or directory change its state. Sytemd uses path-based activation\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: System state snapshots\0Systemd can save temporarily the current state of all units and after restore the previous state. For this systemd uses dynamically created snapshot units\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: Mount and automount point management\0Systemd monitors and manages mount and automount points. For this systemd uses mount units\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: Aggressive parallelization\0Systemd star system service in paralel as soon as all listening sockets are in place (using the other characteistic of systemd: Socket-based activation)\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: Transactional unit activation logic\0Before activationg or deactivating a unit, systemd calculates its dependencies, creates a temporary transaction and verifies that this transaction is consisten\0System_administrator_Guide,Infrastructure_Services,Systemd
+Describe the next main feature of systemd on centos7: Backwards compatibility with SysV init\0Systemd fully supports SysV init scripts\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can starts a service with systemd?\0systemctl start name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can stops a service with systemd?\0systemctl stop name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can restarts a service with systemd?\0try-restart name.servicesystemctl restart name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can restarts a service only if it is running with systemd?\0systemctl try-restart name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can reload a configuration with systemd?\0systemctl reload name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can checks if a service is running?\0systemctl status name.service or systemctl is-active name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+how you can displays the status of all services (active and exited)?\0systemctl list-units --type service --all\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can Enables a service with systemd?\0systemctl enable name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can disable a service with systemd?\0systemctl disable name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can list all the services units loaded and active\0systemctl list-units --type service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can list all the services available?\0systemctl list-unit-files --type service\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to display detailed information about a service?\0systemctl status name.servie\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to recreate the symbolic links that enable a service with systemctl?\0systemctl reenable name.service\0System_administrator_Guide,Infrastructure_Services,Systemd
+What concept replace the old concept of SysV init runlevels\0targets\0System_administrator_Guide,Infrastructure_Services,Systemd
+What target are equivalent at runlevel 0 that shut down and power off the system\0runlevel10.target or poweroff.target\0System_administrator_Guide,Infrastructure_Services,Systemd
+What target are equivalent at runlevel 1 that set up a rescue shell\0runlevel11.target or rescue.targe\0System_administrator_Guide,Infrastructure_Services,Systemd
+What target are equivalent at runlevel 2 that Set up a non-graphical multi-user system\0runlevel12.target or multi-user.target\0System_administrator_Guide,Infrastructure_Services,Systemd
+What target are equivalent at runlevel 3 that set up a non-graphical multi-user system\0System_administrator_Guide,Infrastructure_Services,Systemd
+What target are equivalent at runlevel 4 that set up a non graphical multi-user system\0runlevel14.target or multi-user.target\0System_administrator_Guide,Infrastructure_Services,Systemd
+What target are equivalent at runlevel 5 that set up a graphical multi-user system\0runlevel15.target or graphical.target\0System_administrator_Guide,Infrastructure_Services,Systemd
+What target are equivalent at runlevel 6 that shut down and reboot the system\0runlevel6.target or reboot.target\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to change the current target of systemd?\0systemctl isolate name.target\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to determine wich target unit is used by default?\0systemctl get-default\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to change the default target in systemd?\0systemctl set-default name.target\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can change the system to rescue mode (don't use the systemctl isolate)\0systemctl rescue (send messages to users)\0System_administrator_Guide,Infrastructure_Services,Systemd
+It's required the root password to change to rescue mode?\0Yes\0System_administrator_Guide,Infrastructure_Services,Systemd
+How you can change the system to emergency mode?\0systemctl emergency\0System_administrator_Guide,Infrastructure_Services,Systemd
+Whats the difference between emergency and rescue mode?\0In emergency mode only mount the root filesystem in read mode, does not activate network interfaces and only starts few essential services\0System_administrator_Guide,Infrastructure_Services,Systemd
+It's required the root password to change to emergency mode?\0Yes\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to halt the system with systemctl?\0systemctl halt\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to power off the system with systemctl?\0systemctl poweroff\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to restart the system with systemctl?\0systemctl reboot\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to suspend the system with systemctl?\0systemctl suspend\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to hibernate the system with systemctl?\0systemctl hibernate\0System_administrator_Guide,Infrastructure_Services,Systemd
+How to hibernate and susoend the system with systemctl?\0systemctl hybrid-sleep\0System_administrator_Guide,Infrastructure_Services,Systemd
