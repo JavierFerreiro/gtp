@@ -223,3 +223,38 @@ How to restart the system with systemctl?\0systemctl reboot\0System_administrato
 How to suspend the system with systemctl?\0systemctl suspend\0System_administrator_Guide,Infrastructure_Services,Systemd
 How to hibernate the system with systemctl?\0systemctl hibernate\0System_administrator_Guide,Infrastructure_Services,Systemd
 How to hibernate and susoend the system with systemctl?\0systemctl hybrid-sleep\0System_administrator_Guide,Infrastructure_Services,Systemd
+Threats that can be avoided with the use of ssh?\01-Interception of communication between two systems 2-Impersonation of a particular host\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What are the main features of SSH?\01-No one can pose as intended server 2-No one can capture the authentication information 3-No one can intercept the communication 4-Provides secure means to use graphical applications over network (X11 forwarding) 5-Provides a way to secure otherwise insecure protocols (port forwarding) 6-Can be used to create a secure channel 7-Support Kerberos authentication\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What versions of the ssh protocol exist?\Version 1 (with knowed security holes) and version 2 (default)\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What are (chronologically ordered) the event sequence of an ssh connection?\01-Cryptographic handshake then the client can verify that is communication with the correct server. 2-Transport layer is encrypted using symmetric cipher. 3-The client authenticates itself to the server. 4-Client interacts with the remote host over the encypted connection.\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What are the steps followed in the initial handshake of the ssh protocol?1-Keys are exchanged 2-Public key algorithm is determined 3-Symmetric encryption algorithm is determined 4-Message authentication algorithm is determined 5-Hash algorithm is determined\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What need to do the user during the keys exchange?\0Confirm that trust in the host key of the server\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+The secure channel create between server and client in the ssh protocol use symmetric or public key encryption?\0Symmetric encryption\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+When occur the authentication?\0After the transport layer has constructed a secure tunnel\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What technique is used to open multiple channels over a secure channel of ssh protocol?\0Multiplexing\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+Where you can find the config files of ssh?\0The system config files are in /etc/ssh/ (two kinds: client and server) the user config files every user can find in ~/.ssh\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the use of this file: /etc/ssh/moduli\0Contains Diffie-Hellman groups, used for the Diffie-Hellman key exchange\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the use of this file:/etc/ssh/ssh_config\0The default ssh client configuration file (overridden by ~/.ssh/config)\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the use of this file:/etc/ssh/sshd_config\0Configuration file for the ssh daemon\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the use of this file:/etc/ssh/ssh_host_XXX_key\0The XXX private key where XXX could be ecds,nothing (rsa version 1),rsa (for version 2),\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the use of this file:/etc/ssh/ssh_host_XXX_key.pub\0The XXX public key where XXX could be ecds,nothing (rsa version 1),rsa (for version 2),\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the use of this file:/etc/pam.d/sshd?\0The PAM configuration file for ssh daemon\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the use of this file:/etc/sysconfig/sshd\0Configuration file for the sshd service\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is this file:~/.ssh/authorized_keys\0Holds a list of authorized public keys for servers\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is this file:~/.ssh/id_XXX\0Contains the private key of the user for XXX where XXX could be ecdsa or rsa (version 2)\0\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is this file:~/.ssh/id_XXX.pub\0Contains the public key of the user for XXX where XXX could be ecdsa or rsa (version 2)\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is this file:~/.ssh/identity\0RSA version 1 private key file\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is this file:~/.ssh/identity.pub\0RSA version 1 private key file\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is this file:~/.ssh/known_hosts\0Contain host keys of ssh servers accesed by the user\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What package need to install for enable your ssh server?\0openssh-server\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What service manage the ssh daemon?\0sshd.service\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+How to enforce to use only the key-based authentication?\0Edit /etc/ssh/sshd_config and put/modify: PasswordAuthentication no\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+How a user can generate his pair of keys (in ssh context)?\0ssh-keygen -t rsa\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What permission must have the ~/.ssh/ directory to be useful with key authentication?\0700\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+How to permit a user authentication with key pair?\0copy the public key of the user in the ~/.ssh/authorized_keys on the remote user@machine\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+How to obtain the host fingerprint if you have acces to the public key?\0ssh-keygen -l -f /wherever/ssh_host_ecdsa_key.pub\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+How to remove (with command) a server host key?\0ssh-keygen -R machine\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the syntax of the ssh local port forwarding?\0ssh -L localport:remotemachine:remoteport user@remotemachinewithopensshserver\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What instruction on /etc/ssh/sshd_config permit port forwarding?\0AllowTcpForwarding yes\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+What is the syntax of the ssh remote port forwarding?\0ssh -R localport:remotemachine:remoteport user@remotemachineyoupermitconnect\0System_administrator_Guide,Infrastructure_Services,OpenSSH
+\0System_administrator_Guide,Infrastructure_Services,TigerVNC
