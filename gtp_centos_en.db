@@ -257,4 +257,14 @@ How to remove (with command) a server host key?\0ssh-keygen -R machine\0System_a
 What is the syntax of the ssh local port forwarding?\0ssh -L localport:remotemachine:remoteport user@remotemachinewithopensshserver\0System_administrator_Guide,Infrastructure_Services,OpenSSH
 What instruction on /etc/ssh/sshd_config permit port forwarding?\0AllowTcpForwarding yes\0System_administrator_Guide,Infrastructure_Services,OpenSSH
 What is the syntax of the ssh remote port forwarding?\0ssh -R localport:remotemachine:remoteport user@remotemachineyoupermitconnect\0System_administrator_Guide,Infrastructure_Services,OpenSSH
-\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+What is TigerVNC?\0System of graphical desktop sharing remotly. Works on client(vncviewer)-server(vncserver)\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+Where are the configuration files for vncserver?\0/lib/systemd/system/vncserver@.service\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+How to install vnc server?\0yum install tigervnc-server\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+How to install vnc client?\0yum install vnc\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+How to configure vnc server?\01-Copy /lib/systemd/system/vncserver@.service to /lib/systemd/system/vncserver@:display_number.service for each display number you want to enable 2-Edit the file changing User ExecStart 3-systemctl daemon-reload 4-vncpasswd user\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+How to start the vnc server?\0systemctl start vncserver@:display_number.service\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+How to connect with vnc client to vnc server?\0vncviewer username host:display\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+What is the default port of vnc server?\05900\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+How you know what is the port where vnc serves a concrete display?\0port vnc server base + display number . Ex.: 5900+2=5902\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+How to encrypt the communication of vnc?\0vncviewer -via user@host localhost:display_number\0System_administrator_Guide,Infrastructure_Services,TigerVNC
+\0System_administrator_Guide,Servers
