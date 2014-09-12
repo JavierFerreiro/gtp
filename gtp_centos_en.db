@@ -267,4 +267,26 @@ How to connect with vnc client to vnc server?\0vncviewer username host:display\0
 What is the default port of vnc server?\05900\0System_administrator_Guide,Infrastructure_Services,TigerVNC
 How you know what is the port where vnc serves a concrete display?\0port vnc server base + display number . Ex.: 5900+2=5902\0System_administrator_Guide,Infrastructure_Services,TigerVNC
 How to encrypt the communication of vnc?\0vncviewer -via user@host localhost:display_number\0System_administrator_Guide,Infrastructure_Services,TigerVNC
-\0System_administrator_Guide,Servers
+What program is the http or web server in centos 7?\0The apache http server 2.4\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+Where are the files for configure the modules?\0/etc/httpd/conf.modules.d/\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+The files of /etc/httpd/conf.modules.d/ are processed before or after the main body of httpd?\0Before\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+The files of /etc/httpdd/conf.d/ are processed before or after the main body of httpd?\0After\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+How can choose the multi-processing mode of apache http server?\0Edit /etc/httpd/conf.modules.d/00-mpm.conf and uncomment your option\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+Where is moved the directory /var/www (centos 6) in centos 7?\0/usr/share/httpd/\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+How can check if the configuration of httpd is correct?\0apachectl configtest\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+How to install the apache web server?\0yum install httpd\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+What are the three ways to restart the httpd service?\01-systemctl restart httpd.service (restart the service completely) 2-systemctl reload httpd.service (reload the configuration) 3-service httpd graceful (reload the configuration without affecting active request)\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+Whereis the main configuration file? of apache server?\0/etc/httpd/conf/httpd.conf\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+Where is the auxiliary directory for configuration files that are include in the main configuration file of apache server?\0/etc/httpd/conf.d/\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+What is a dso for apache?\0Dynamic Shared Objects (a module)\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+When you can load/unload the modules in apache?\0At runtime\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+Where are the modules files for apache?\0/usr/lib/httpd/modules for 32-bit modules and /usr/lib64/httpd/modules for 64-bit modules\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+How can load a module for apache?\0Write LoadModule modulename path in the configuration\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+What are a typical configuration for a name-based virtual host?\01-Write in /etc/httpd/conf.d/lab2.conf: <VirtualHost lab2:8080>\n ServerAdmin root@lab2.org\n DocumentRoot /var/www/lab2\n ServerName lab2\n ErrorLog logs/lab2Errors.log\n CustomLog logs/lab2Acces.log common </VirtualHost>\n The directive <VirtualHost lab2:8080> could be more unprecisly like: <VirtualHost *:8080> 2-Add add the listen directive the new port \0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+How to install the module for use certificates in apache?\0yum install mod_ssl openssl\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+How to reuse a previous certificate?\01-Copy the private key to /etc/pki/tls/private/hostname.key 2-copy the certificate to /etc/pki/tls/certs/hostname.crt 3-Add to /etc/httpd/conf.d/ssl.conf the following lines: SSLCertificateFile /etc/pki/tls/certs/hostname.crt\nSSLCertificateKeyFile /etc/pki/tls/private/hostname.key\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+What package need to install to generate a new certificate and key for apache?\0crypto-utils\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+How to generate a certificate?\01-Generate a private key: openssl genrsa -des3 -out server.key 2048\n2-Generate the CSR(Certificate signing request): openssl req -new -key server.key -out server.csr\n3-Eliminate the passphrase (if not, apache question you for the passphrase every time start): cp server.key server.key.org;openssl rsa -in server.key.org -out server.key\n4-Generating a self-signed certificate: openssl x509 -req  -days 365 -in server.csr -signkey server.key -out server.crt\n5-copy key and cert in the directories (normally in /etc/pki/tls/cert and /etc/pki/tls/private\n6-Configure SSL enable VirtualHost: SSLEngine on SSLCertificateFile /whereever/server.crt SSLCertificateKeyFile /wahtever/sslkey SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
+\0System_administrator_Guide,Servers,The_Apache_HTTP_Server
